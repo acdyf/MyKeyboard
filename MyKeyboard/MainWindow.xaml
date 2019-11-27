@@ -1,0 +1,79 @@
+﻿<Window x:Class="MyKeyboard.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyKeyboard"
+        mc:Ignorable="d" WindowStyle="None" AllowsTransparency="True" ShowActivated="False" Topmost="True" ResizeMode="NoResize" WindowStartupLocation="Manual" ShowInTaskbar="True" MouseDown="Window_MouseDown" Loaded="Window_Loaded"  Width="820" Height="315">
+    <Border Background="{DynamicResource DefaultBackgroundBrush}">
+        <!--主键盘区-->
+        <WrapPanel Width="800" HorizontalAlignment="Center" Background="White">
+            <!--第一行-->
+            <local:ButtonEx LeftTopText="~" LeftBottomText="`" Width="50" Tag=""/>
+            <local:ButtonEx LeftTopText="!"  LeftBottomText="1" Width="50"/>
+            <local:ButtonEx LeftTopText="@" LeftBottomText="2" Width="50"/>
+            <local:ButtonEx LeftTopText="#" LeftBottomText="3" Width="50"/>
+            <local:ButtonEx LeftTopText="$" LeftBottomText="4" Width="50"/>
+            <local:ButtonEx LeftTopText="%" LeftBottomText="5" Width="50"/>
+            <local:ButtonEx LeftTopText="^" LeftBottomText="6" Width="50"/>
+            <local:ButtonEx LeftTopText="&#38;" LeftBottomText="7" Width="50"/>
+            <local:ButtonEx LeftTopText="*" LeftBottomText="8" Width="50"/>
+            <local:ButtonEx LeftTopText="(" LeftBottomText="9" Width="50"/>
+            <local:ButtonEx LeftTopText=")" LeftBottomText="0" Width="50"/>
+            <local:ButtonEx LeftTopText="—" LeftBottomText="-" Width="50"/>
+            <local:ButtonEx LeftTopText="+" LeftBottomText="=" Width="50"/>
+            <local:ButtonEx RightTopText="BackSpace" Width="150"/>
+            <!--第二行-->
+            <local:ButtonEx LeftTopText="Tab" Width="70"/>
+            <local:ButtonEx LeftTopText="Q" Width="50"/>
+            <local:ButtonEx LeftTopText="W" Width="50"/>
+            <local:ButtonEx LeftTopText="E" Width="50"/>
+            <local:ButtonEx LeftTopText="R" Width="50"/>
+            <local:ButtonEx LeftTopText="T" Width="50"/>
+            <local:ButtonEx LeftTopText="Y" Width="50"/>
+            <local:ButtonEx LeftTopText="U" Width="50"/>
+            <local:ButtonEx LeftTopText="I" Width="50"/>
+            <local:ButtonEx LeftTopText="O" Width="50"/>
+            <local:ButtonEx LeftTopText="P" Width="50"/>
+            <local:ButtonEx LeftTopText=" &#123;" LeftBottomText=" [" Width="50"/>
+            <local:ButtonEx LeftTopText="&#125;" LeftBottomText="]" Width="50"/>
+            <local:ButtonEx LeftTopText="|" LeftBottomText="\" Width="130"/>
+            <!--第三行-->
+            <local:ButtonEx LeftTopText="Caps" Width="80"/>
+            <local:ButtonEx LeftTopText="A" Width="50" Click="ButtonEx_Click" MouseDown="ButtonEx_MouseDown" MouseUp="ButtonEx_MouseUp" Tag="A"/>
+            <local:ButtonEx LeftTopText="S" Width="50"/>
+            <local:ButtonEx LeftTopText="D" Width="50"/>
+            <local:ButtonEx LeftTopText="F" Width="50"/>
+            <local:ButtonEx LeftTopText="G" Width="50"/>
+            <local:ButtonEx LeftTopText="H" Width="50"/>
+            <local:ButtonEx LeftTopText="J" Width="50"/>
+            <local:ButtonEx LeftTopText="K" Width="50"/>
+            <local:ButtonEx LeftTopText="L" Width="50"/>
+            <local:ButtonEx LeftTopText=":" LeftBottomText=";" Width="50"/>
+            <local:ButtonEx LeftTopText="&#34;" LeftBottomText="'" Width="50"/>
+            <local:ButtonEx RightTopText="Enter" Width="170"/>
+            <!--第四行-->
+            <local:ButtonEx LeftTopText="Shift" Width="100"/>
+            <local:ButtonEx LeftTopText="Z" Width="50"/>
+            <local:ButtonEx LeftTopText="X" Width="50"/>
+            <local:ButtonEx LeftTopText="C" Width="50"/>
+            <local:ButtonEx LeftTopText="V" Width="50"/>
+            <local:ButtonEx LeftTopText="B" Width="50"/>
+            <local:ButtonEx LeftTopText="N" Width="50"/>
+            <local:ButtonEx LeftTopText="M" Width="50"/>
+            <local:ButtonEx LeftTopText="K" Width="50"/>
+            <local:ButtonEx LeftTopText="&#60;" LeftBottomText="," Width="50"/>
+            <local:ButtonEx LeftTopText="&#62;" LeftBottomText="." Width="50"/>
+            <local:ButtonEx RightTopText="Shift" Width="200" Click="ButtonEx_Click" Tag="Shift"/>
+            <!--第五行-->
+            <local:ButtonEx LeftTopText="Ctrl" Width="70"/>
+            <local:ButtonEx MidGeo="{DynamicResource WinGeometry}" Width="60"/>
+            <local:ButtonEx LeftTopText="Alt" Width="60"/>
+            <local:ButtonEx Width="360"/>
+            <local:ButtonEx LeftTopText="Alt" Width="60"/>
+            <local:ButtonEx MidGeo="{DynamicResource WinGeometry}" Width="60"/>
+            <local:ButtonEx MidGeo="{DynamicResource MenuGeometry}" Width="60"/>
+            <local:ButtonEx LeftTopText="Ctrl" Width="70"/>
+        </WrapPanel>
+    </Border>
+</Window>

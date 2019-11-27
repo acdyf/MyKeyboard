@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:MyKeyboard">
+    <Color x:Key="DefaultBackgroundColor">Black</Color>
+    <Color x:Key="DefaultBorderColor">White</Color>
+
+    <Color x:Key="DefaultButtonExBackgroundColor">Blue</Color>
+    <Color x:Key="DefaultButtonExForegroundColor">Red</Color>
+    <Color x:Key="DefaultButtonExMouseOverBackgroundColor">Yellow</Color>
+    <Color x:Key="DefaultButtonExMouseOverForegroundColor">Green</Color>
+    <Color x:Key="DefaultButtonExPressedBackgroundColor">Green</Color>
+    <Color x:Key="DefaultButtonExPressedForegroundColor">Yellow</Color>
+    <Color x:Key="DefaultButtonExLightBackgroundColor">White</Color>
+    <Color x:Key="DefaultButtonExLightForegroundColor">Black</Color>
+</ResourceDictionary>
