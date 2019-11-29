@@ -25,7 +25,7 @@ namespace MyKeyboard.Methods
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
-        internal static byte FintVirtualKey(string key)
+        internal static byte FindVirtualKey(string key)
         {
             byte b = 0;
             try
