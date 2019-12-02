@@ -44,8 +44,8 @@ namespace MyKeyboard
         {
             Window targetWindow = Window.GetWindow(this);
             IntPtr a = new WindowInteropHelper(targetWindow).Handle;
-            int temp = NativeMethods.GetWindowLong(a, -20);
-            NativeMethods.SetWindowLong(a, -20, temp | 0x08000000);
+            int temp = NativeMethods.GetWindowLong(a, NativeMethods.GWL_EXSTYLE);
+            NativeMethods.SetWindowLong(a, NativeMethods.GWL_EXSTYLE, temp | NativeMethods.WS_EX_NOACTIVATE);
         }
         #endregion
     }

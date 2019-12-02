@@ -2,6 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:MyKeyboard.Resources">
     <Style x:Key="KeyButtonStyle" TargetType="Button">
+        <Setter Property="Focusable" Value="False"/>
         <Setter Property="BorderBrush" Value="{DynamicResource DefaultBorderBrush}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="Background" Value="{DynamicResource DefaultBackgroundBrush}"/>

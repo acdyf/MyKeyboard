@@ -1,9 +1,11 @@
-﻿using MyKeyboard.Methods;
+﻿using MyKeyboard.Enums;
+using MyKeyboard.Methods;
+using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows.Input;
 
-namespace MyKeyboard
+namespace MyKeyboard.ViewModel
 {
     /// <summary>
     /// 键盘控件视图模型
@@ -167,21 +169,21 @@ namespace MyKeyboard
         {
             if (obj != null)
             {
-                string temp = obj.PowerToString();
+                var temp = Enum.Parse(typeof(KeyBoardPageIndex), obj.ToString());
                 switch (temp)
                 {
                     default:
-                    case "1":
-                        CurrentPage = 1;
-                        GoToPage = 2;
+                    case KeyBoardPageIndex.Character:
+                        CurrentPage = (int)KeyBoardPageIndex.Character;
+                        GoToPage = (int)KeyBoardPageIndex.Number;
                         break;
-                    case "2":
-                        CurrentPage = 2;
-                        GoToPage = 1;
+                    case KeyBoardPageIndex.Number:
+                        CurrentPage = (int)KeyBoardPageIndex.Number;
+                        GoToPage = (int)KeyBoardPageIndex.Character;
                         break;
-                    case "3":
-                        CurrentPage = 3;
-                        GoToPage = 1;
+                    case KeyBoardPageIndex.Third:
+                        CurrentPage = (int)KeyBoardPageIndex.Third;
+                        GoToPage = (int)KeyBoardPageIndex.Character;
                         break;
                 }
             }

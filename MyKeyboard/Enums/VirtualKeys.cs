@@ -5,7 +5,7 @@ Copyright ©  2018  版权所有。
 创建人员：dingyf
 --------------------------------------------------------------------------*/
 
-namespace MyKeyboard
+namespace MyKeyboard.Enums
 {
     /// <summary>
     /// 键盘码

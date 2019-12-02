@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace MyKeyboard
+namespace MyKeyboard.Methods
 {
     /// <summary>
     /// 接转命令

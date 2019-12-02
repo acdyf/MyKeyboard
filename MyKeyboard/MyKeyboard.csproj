@@ -55,16 +55,17 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enums\KeyBoardPageIndex.cs" />
     <Compile Include="KeyBoardUc.xaml.cs">
       <DependentUpon>KeyBoardUc.xaml</DependentUpon>
     </Compile>
-    <Compile Include="KeyBoardUcViewModel.cs" />
-    <Compile Include="KeyButtonElement.cs" />
+    <Compile Include="ViewModel\KeyBoardUcViewModel.cs" />
+    <Compile Include="Resources\KeyButtonElement.cs" />
     <Compile Include="Methods\Common.cs" />
     <Compile Include="Methods\NativeMethods.cs" />
-    <Compile Include="RelayCommand.cs" />
+    <Compile Include="Methods\RelayCommand.cs" />
     <Compile Include="Resources\CompareConverter.cs" />
-    <Compile Include="VirtualKeys.cs" />
+    <Compile Include="Enums\VirtualKeys.cs" />
     <Page Include="Basic.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

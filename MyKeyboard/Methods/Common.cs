@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyKeyboard.Enums;
+using System;
 using System.Windows.Controls;
 
 namespace MyKeyboard.Methods
@@ -27,7 +28,7 @@ namespace MyKeyboard.Methods
         internal static string PowerToString(this object target)
         {
             return target == null ? string.Empty : target.ToString();
-        }
+        } 
 
         /// <summary>
         /// 查找对应虚拟按键码

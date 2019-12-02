@@ -15,14 +15,24 @@ namespace MyKeyboard.Methods
     internal class NativeMethods
     {
         /// <summary>
+        /// 使用此样式创建的顶级窗口在用户单击时不会成为前景窗口。
+        /// </summary>
+        internal const int WS_EX_NOACTIVATE = 0x08000000;
+
+        /// <summary>
+        /// 获取/设定扩展窗口样式
+        /// </summary>
+        internal const int GWL_EXSTYLE = -20;
+
+        /// <summary>
         /// 扩展键盘
         /// </summary>
-        public const uint KEYEVENTF_EXTENDEDKEY = 0x1;
+        internal const uint KEYEVENTF_EXTENDEDKEY = 0x1;
 
         /// <summary>
         /// 按键放开
         /// </summary>
-        public const uint KEYEVENTF_KEYUP = 0x2;
+        internal const uint KEYEVENTF_KEYUP = 0x2;
 
         /// <summary>
         /// 获取按键状态
