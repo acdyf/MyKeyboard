@@ -1,9 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:MyKeyboard">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <SolidColorBrush x:Key="DefaultBackgroundBrush" Color="{DynamicResource DefaultBackgroundColor}"/>
     <SolidColorBrush x:Key="DefaultBorderBrush" Color="{DynamicResource DefaultBorderColor}"/>
-
     <SolidColorBrush x:Key="DefaultButtonExBackgroundBrush" Color="{DynamicResource DefaultButtonExBackgroundColor}"/>
     <SolidColorBrush x:Key="DefaultButtonExForegroundBrush" Color="{DynamicResource DefaultButtonExForegroundColor}"/>
     <SolidColorBrush x:Key="DefaultButtonExMouseOverBackgroundBrush" Color="{DynamicResource DefaultButtonExMouseOverBackgroundColor}"/>
