@@ -1,21 +1,43 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace MyKeyboard.Methods
 {
+    /// <summary>
+    /// 通用方法类
+    /// </summary>
     internal static class Common
     {
+        /// <summary>
+        /// 键盘信息字典
+        /// </summary>
+        private static Dictionary<string, string> keyValuePairs;
+
+        /// <summary>
+        /// 获取键盘信息
+        /// </summary>
+        /// <returns></returns>
+        public static Dictionary<string, string> GetBoardInfo()
+        {
+            if (keyValuePairs == null || keyValuePairs.Count == 0)
+            {
+                keyValuePairs = new Dictionary<string, string>
+                {
+                    { "1", "ABC" },
+                    { "2", "123" },
+                    { "3", "#+=" }
+                };
+            }
+            return keyValuePairs;
+        }
+
         /// <summary>
         /// 转换字符串
         /// </summary>
         /// <param name="target"></param>
         /// <returns></returns>
-        static public string PowerToString(this object target)
+        public static string PowerToString(this object target)
         {
             return target == null ? string.Empty : target.ToString();
         }

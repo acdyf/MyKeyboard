@@ -5,12 +5,6 @@ Copyright ©  2018  版权所有。
 创建人员：dingyifang
 --------------------------------------------------------------------------*/
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace MyKeyboard
 {
     /// <summary>

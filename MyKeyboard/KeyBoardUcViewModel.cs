@@ -1,10 +1,6 @@
 ﻿using MyKeyboard.Methods;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 
@@ -26,7 +22,25 @@ namespace MyKeyboard
         #endregion
 
         #region Fileds
+        /// <summary>
+        /// 要切换的键盘名称
+        /// </summary>
         private string changeBoardName = "1";
+
+        /// <summary>
+        /// 要切换的键盘名称1
+        /// </summary>
+        private string changeBoardName1 = "2";
+
+        /// <summary>
+        /// 切换键盘按键显示内容
+        /// </summary>
+        private string boardContent = "123";
+
+        /// <summary>
+        /// 切换键盘按键显示内容1
+        /// </summary>
+        private string boardContent1 = "#+=";
 
         /// <summary>
         /// 按键常亮控制标识
@@ -42,6 +56,11 @@ namespace MyKeyboard
         /// 数字键盘可见性
         /// </summary>
         private Visibility numBoardVisibility = Visibility.Collapsed;
+
+        /// <summary>
+        /// 第三个键盘可见性
+        /// </summary>
+        private Visibility thirdBoardVisibility = Visibility.Collapsed;
 
         #region 26个字母
         private string a = "a";
@@ -377,11 +396,68 @@ namespace MyKeyboard
             }
         }
 
-        public string ChangeBoardName { get => changeBoardName;
+        /// <summary>
+        /// 要切换的键盘名称
+        /// </summary>
+        public string ChangeBoardName
+        {
+            get => changeBoardName;
             set
             {
                 changeBoardName = value;
                 RaisePropertyChanged("ChangeBoardName");
+            }
+        }
+
+        /// <summary>
+        /// 要切换的键盘名称1
+        /// </summary>
+        public string ChangeBoardName1
+        {
+            get => changeBoardName1; set
+            {
+                changeBoardName1 = value;
+                RaisePropertyChanged("ChangeBoardName1");
+
+            }
+        }
+
+        /// <summary>
+        /// 切换键盘按键显示内容
+        /// </summary>
+        public string BoardContent
+        {
+            get => boardContent;
+            set
+            {
+                boardContent = value;
+                RaisePropertyChanged("BoardContent");
+            }
+        }
+
+        /// <summary>
+        /// 切换键盘按键显示内容1
+        /// </summary>
+        public string BoardContent1
+        {
+            get => boardContent1;
+            set
+            {
+                boardContent1 = value;
+                RaisePropertyChanged("BoardContent1");
+            }
+        }
+
+        /// <summary>
+        /// 第三个键盘可见性
+        /// </summary>
+        public Visibility ThirdBoardVisibility
+        {
+            get => thirdBoardVisibility;
+            set
+            {
+                thirdBoardVisibility = value;
+                RaisePropertyChanged("ThirdBoardVisibility");
             }
         }
 
@@ -396,7 +472,8 @@ namespace MyKeyboard
         {
             CharacterBoardVisibility = Visibility.Visible;
             NumBoardVisibility = Visibility.Hidden;
-            ChangeBoardName = "1";
+            BoardContent = Common.GetBoardInfo().FirstOrDefault().Value;
+            ChangeBoardName = "2";
             ChangeBoardPressExecuteCommand = new RelayCommand(ChangeBoardPress);
             CapsPressExecuteCommand = new RelayCommand(CapsLockPress);
             KeyPressExecuteCommand = new RelayCommand(KeyPress);
@@ -424,12 +501,30 @@ namespace MyKeyboard
                 switch (temp)
                 {
                     default:
-                        NumBoardVisibility = Visibility.Hidden;
-                        CharacterBoardVisibility = Visibility.Visible;
-                        break;
                     case "1":
+                        CharacterBoardVisibility = Visibility.Visible;
+                        NumBoardVisibility = Visibility.Collapsed;
+                        ThirdBoardVisibility = Visibility.Collapsed;
+                        BoardContent = Common.GetBoardInfo()["2"];
+                        ChangeBoardName = "2";
+                        break;
+                    case "2":
+                        CharacterBoardVisibility = Visibility.Collapsed;
                         NumBoardVisibility = Visibility.Visible;
-                        CharacterBoardVisibility = Visibility.Hidden;
+                        ThirdBoardVisibility = Visibility.Collapsed;
+                        BoardContent1 = Common.GetBoardInfo()["3"];
+                        ChangeBoardName1 = "3";
+                        BoardContent = Common.GetBoardInfo()["1"];
+                        ChangeBoardName = "1";
+                        break;
+                    case "3":
+                        NumBoardVisibility = Visibility.Collapsed;
+                        CharacterBoardVisibility = Visibility.Collapsed;
+                        ThirdBoardVisibility = Visibility.Visible;
+                        BoardContent1 = Common.GetBoardInfo()["2"];
+                        ChangeBoardName1 = "2";
+                        BoardContent = Common.GetBoardInfo()["1"];
+                        ChangeBoardName = "1";
                         break;
                 }
             }
@@ -487,9 +582,22 @@ namespace MyKeyboard
         {
             if (obj != null)
             {
-                byte bkey = Common.FindVirtualKey(obj.PowerToString());
-                NativeMethods.Keybd_event(bkey, 0x45, NativeMethods.KEYEVENTF_EXTENDEDKEY | 0, 0);
-                NativeMethods.Keybd_event(bkey, 0x45, NativeMethods.KEYEVENTF_EXTENDEDKEY | NativeMethods.KEYEVENTF_KEYUP, 0);
+                byte bkey;
+                string temp = obj.PowerToString();
+                if (temp.ToLower().StartsWith("shift_"))
+                {
+                    bkey = Common.FindVirtualKey(temp.Substring(6));
+                    NativeMethods.Keybd_event((byte)VirtualKeys.Shift, 0x45, NativeMethods.KEYEVENTF_EXTENDEDKEY | 0, 0);
+                    NativeMethods.Keybd_event(bkey, 0x45, NativeMethods.KEYEVENTF_EXTENDEDKEY | 0, 0);
+                    NativeMethods.Keybd_event(bkey, 0x45, NativeMethods.KEYEVENTF_EXTENDEDKEY | NativeMethods.KEYEVENTF_KEYUP, 0);
+                    NativeMethods.Keybd_event((byte)VirtualKeys.Shift, 0x45, NativeMethods.KEYEVENTF_EXTENDEDKEY | NativeMethods.KEYEVENTF_KEYUP, 0);
+                }
+                else
+                {
+                    bkey = Common.FindVirtualKey(temp);
+                    NativeMethods.Keybd_event(bkey, 0x45, NativeMethods.KEYEVENTF_EXTENDEDKEY | 0, 0);
+                    NativeMethods.Keybd_event(bkey, 0x45, NativeMethods.KEYEVENTF_EXTENDEDKEY | NativeMethods.KEYEVENTF_KEYUP, 0);
+                }
             }
         }
 
