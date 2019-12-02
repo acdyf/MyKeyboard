@@ -7,12 +7,11 @@
              xmlns:res="clr-namespace:MyKeyboard.Resources"
              mc:Ignorable="d" Loaded="UserControl_Loaded">
     <UserControl.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Basic.xaml"/>
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
+        <ResourceDictionary Source="Basic.xaml"/>
     </UserControl.Resources>
+    <UserControl.DataContext>
+        <local:KeyBoardUcViewModel/>
+    </UserControl.DataContext>
     <Viewbox Stretch="Fill">
         <Grid>
             <Grid.RowDefinitions>
@@ -29,77 +28,77 @@
             <!--通用-->
             <Grid Grid.Row="7">
                 <Button Style="{DynamicResource KeyButtonStyle}" Content="Space" HorizontalAlignment="Stretch" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="Space" Margin="220,0,220,0"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding BoardContent}" HorizontalAlignment="Left" Width="200" Height="100"  Command="{Binding ChangeBoardPressExecuteCommand}" CommandParameter="{Binding ChangeBoardName}" Margin="10,0,0,0"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding CurrentPage,Converter={StaticResource CompareToContentConverter},ConverterParameter=1}" HorizontalAlignment="Left" Width="200" Height="100"  Command="{Binding ChangeBoardPressExecuteCommand}" CommandParameter="{Binding GoToPage}" Margin="10,0,0,0"/>
                 <Button Style="{DynamicResource KeyButtonStyle}" Content="Enter" HorizontalAlignment="Right" Width="200" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="Return" Margin="0,0,10,0"/>
             </Grid>
-            <!--字母页-->
-            <StackPanel Grid.Row="1" Orientation="Horizontal" Visibility="{Binding CharacterBoardVisibility}" d:IsHidden="True">
+            <!--字母页 CurrentPage=1-->
+            <StackPanel Grid.Row="1" Orientation="Horizontal" Visibility="{Binding CurrentPage,Converter={StaticResource CompareToVisibilityConverter},ConverterParameter=1}">
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Q}" Width="100" Height="100" Command="{Binding KeyPressExecuteCommand}" CommandParameter="Q"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[16]}" Width="100" Height="100" Command="{Binding KeyPressExecuteCommand}" CommandParameter="Q"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding W}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="W"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[22]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="W"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding E}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="E"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[4]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="E"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding R}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="R"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[17]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="R"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding T}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="T"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[19]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="T"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Y}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="Y"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[24]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="Y"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding U}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="U"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[20]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="U"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding I}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="I"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[8]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="I"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding O}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="O"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[14]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="O"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding P}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="P"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[15]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="P"/>
                 <Grid Width="10"/>
             </StackPanel>
-            <StackPanel Grid.Row="3" Orientation="Horizontal" Visibility="{Binding CharacterBoardVisibility}" d:IsHidden="True">
+            <StackPanel Grid.Row="3" Orientation="Horizontal" Visibility="{Binding CurrentPage,Converter={StaticResource CompareToVisibilityConverter},ConverterParameter=1}">
                 <Grid Width="60"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding A}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="A"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[0]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="A"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding S}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="S"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[18]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="S"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding D}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="D"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[3]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="D"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding F}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="F"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[5]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="F"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding G}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="G"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[6]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="G"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding H}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="H"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[7]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="H"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding J}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="J"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[9]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="J"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding K}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="K"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[10]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="K"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding L}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="L"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[11]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="L"/>
                 <Grid Width="10"/>
             </StackPanel>
-            <StackPanel Grid.Row="5" Orientation="Horizontal" Visibility="{Binding CharacterBoardVisibility}" d:IsHidden="True">
+            <StackPanel Grid.Row="5" Orientation="Horizontal" Visibility="{Binding CurrentPage,Converter={StaticResource CompareToVisibilityConverter},ConverterParameter=1}">
                 <Grid Width="10"/>
                 <Button Style="{DynamicResource KeyButtonStyle}" res:KeyButtonElement.Geometry="{DynamicResource UpArrowGeometry}" Width="100" Height="100" res:KeyButtonElement.IsAlwaysLight="{Binding AlwaysLight}" Command="{Binding CapsPressExecuteCommand}" CommandParameter="CapsLock"/>
                 <Grid Width="58"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Z}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="Z"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[25]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="Z"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding X}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="X"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[23]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="X"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding C}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="C"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[2]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="C"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding V}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="V"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[21]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="V"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding B}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="B"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[1]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="B"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding N}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="N"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[13]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="N"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding M}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="M"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[12]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="M"/>
                 <Grid Width="68"/>
                 <Button Style="{DynamicResource KeyButtonStyle}" res:KeyButtonElement.Geometry="{DynamicResource BackSpaceGeometry}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="Back"/>
                 <Grid Width="10"/>
             </StackPanel>
-            <!--数字与标点符号页-->
-            <StackPanel Grid.Row="1" Orientation="Horizontal" Visibility="{Binding NumBoardVisibility}" d:IsHidden="True">
+            <!--数字与标点符号页 CurrentPage=2-->
+            <StackPanel Grid.Row="1" Orientation="Horizontal" Visibility="{Binding CurrentPage,Converter={StaticResource CompareToVisibilityConverter},ConverterParameter=2}" d:IsHidden="True">
                 <Grid Width="10"/>
                 <Button Style="{DynamicResource KeyButtonStyle}" Content="1" Width="100" Height="100" Command="{Binding KeyPressExecuteCommand}" CommandParameter="N1"/>
                 <Grid Width="10"/>
@@ -122,7 +121,7 @@
                 <Button Style="{DynamicResource KeyButtonStyle}" Content="0" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="N0"/>
                 <Grid Width="10"/>
             </StackPanel>
-            <StackPanel Grid.Row="3" Orientation="Horizontal" Visibility="{Binding NumBoardVisibility}" d:IsHidden="True">
+            <StackPanel Grid.Row="3" Orientation="Horizontal" Visibility="{Binding CurrentPage,Converter={StaticResource CompareToVisibilityConverter},ConverterParameter=2}" d:IsHidden="True">
                 <Grid Width="10"/>
                 <Button Style="{DynamicResource KeyButtonStyle}" Content="-" Width="100" Height="100" Command="{Binding KeyPressExecuteCommand}" CommandParameter="OEMMinus"/>
                 <Grid Width="10"/>
@@ -145,9 +144,9 @@
                 <Button Style="{DynamicResource KeyButtonStyle}" Content="&#34;" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="Shift_OEM7"/>
                 <Grid Width="10"/>
             </StackPanel>
-            <StackPanel Grid.Row="5" Orientation="Horizontal" Visibility="{Binding NumBoardVisibility}" d:IsHidden="True">
+            <StackPanel Grid.Row="5" Orientation="Horizontal" Visibility="{Binding CurrentPage,Converter={StaticResource CompareToVisibilityConverter},ConverterParameter=2}" d:IsHidden="True">
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding BoardContent1}" Width="100" Height="100" Command="{Binding ChangeBoardPressExecuteCommand}" CommandParameter="{Binding ChangeBoardName1}"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding CurrentPage,Converter={StaticResource CompareToSubContentConverter},ConverterParameter=2}" Width="100" Height="100" Command="{Binding ChangeBoardPressExecuteCommand}" CommandParameter="3"/>
                 <Grid Width="168"/>
                 <Button Style="{DynamicResource KeyButtonStyle}" Content="." Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="OEMPeriod"/>
                 <Grid Width="10"/>
@@ -162,8 +161,8 @@
                 <Button Style="{DynamicResource KeyButtonStyle}" res:KeyButtonElement.Geometry="{DynamicResource BackSpaceGeometry}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="Back"/>
                 <Grid Width="10"/>
             </StackPanel>
-            <!--第三个键盘页-->
-            <StackPanel Grid.Row="1" Orientation="Horizontal" Visibility="{Binding ThirdBoardVisibility}">
+            <!--第三个键盘页 CurrentPage=3-->
+            <StackPanel Grid.Row="1" Orientation="Horizontal" Visibility="{Binding CurrentPage,Converter={StaticResource CompareToVisibilityConverter},ConverterParameter=3}" d:IsHidden="True">
                 <Grid Width="10"/>
                 <Button Style="{DynamicResource KeyButtonStyle}" Content="[" Width="100" Height="100" Command="{Binding KeyPressExecuteCommand}" CommandParameter="OEM4"/>
                 <Grid Width="10"/>
@@ -186,7 +185,7 @@
                 <Button Style="{DynamicResource KeyButtonStyle}" Content="=" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="Shift_OEMPlus"/>
                 <Grid Width="10"/>
             </StackPanel>
-            <StackPanel Grid.Row="3" Orientation="Horizontal" Visibility="{Binding ThirdBoardVisibility}">
+            <StackPanel Grid.Row="3" Orientation="Horizontal" Visibility="{Binding CurrentPage,Converter={StaticResource CompareToVisibilityConverter},ConverterParameter=3}" d:IsHidden="True">
                 <Grid Width="168"/>
                 <Button Style="{DynamicResource KeyButtonStyle}" Content="_" Width="100" Height="100" Command="{Binding KeyPressExecuteCommand}" CommandParameter="Shift_OEMMinus"/>
                 <Grid Width="10"/>
@@ -203,9 +202,9 @@
                 <Button Style="{DynamicResource KeyButtonStyle}" Content="`" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="OEM3"/>
                 <Grid Width="10"/>
             </StackPanel>
-            <StackPanel Grid.Row="5" Orientation="Horizontal" Visibility="{Binding ThirdBoardVisibility}">
+            <StackPanel Grid.Row="5" Orientation="Horizontal" Visibility="{Binding CurrentPage,Converter={StaticResource CompareToVisibilityConverter},ConverterParameter=3}" d:IsHidden="True">
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding BoardContent1}" Width="100" Height="100" Command="{Binding ChangeBoardPressExecuteCommand}" CommandParameter="{Binding ChangeBoardName1}"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding CurrentPage,Converter={StaticResource CompareToSubContentConverter},ConverterParameter=2}" Width="100" Height="100" Command="{Binding ChangeBoardPressExecuteCommand}" CommandParameter="2"/>
                 <Grid Width="168"/>
                 <Button Style="{DynamicResource KeyButtonStyle}" Content="." Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="OEMPeriod"/>
                 <Grid Width="10"/>

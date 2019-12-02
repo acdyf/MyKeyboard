@@ -6,5 +6,6 @@
         <ResourceDictionary Source="Resources/Geometries.xaml"/>
         <ResourceDictionary Source="Resources/Brushes.xaml"/>
         <ResourceDictionary Source="Resources/ButtonStyle.xaml"/>
+        <ResourceDictionary Source="Resources/Converters.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

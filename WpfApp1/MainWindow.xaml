@@ -6,6 +6,6 @@
         xmlns:kbu="clr-namespace:MyKeyboard;assembly=MyKeyboard"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"  Background="Gray" Topmost="True" Loaded="Window_Loaded">
+        Title="MainWindow" Height="450" Width="800"  Background="#1A1A1A" Topmost="True" Loaded="Window_Loaded">
     <kbu:KeyBoardUc x:Name="KeyBoardUc"/>
 </Window>

@@ -11,7 +11,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
-                    <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true" CornerRadius="10">
+                    <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" Background="{TemplateBinding Background}" SnapsToDevicePixels="true" CornerRadius="10">
                         <Grid>
                             <ContentPresenter x:Name="ContentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" RecognizesAccessKey="True" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
                             <Path x:Name="path" Fill="{TemplateBinding Foreground}" Data="{TemplateBinding local:KeyButtonElement.Geometry}" Stretch="Uniform"  Grid.ColumnSpan="2" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10"/>
@@ -38,12 +38,5 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-        <!--<Style.Triggers>
-            --><!--常亮--><!--
-            <Trigger Property="IsEnabled" Value="false">
-                <Setter Property="Background" Value="{DynamicResource DefaultButtonExLightBackgroundBrush}" />
-                <Setter Property="Foreground" Value="{DynamicResource DefaultButtonExLightForegroundBrush}"/>
-            </Trigger>
-        </Style.Triggers>-->
     </Style>
 </ResourceDictionary>

@@ -18,7 +18,6 @@ namespace MyKeyboard
         public KeyBoardUc()
         {
             InitializeComponent();
-            this.DataContext = new KeyBoardUcViewModel();
         }
         #endregion
 
@@ -30,7 +29,10 @@ namespace MyKeyboard
         /// <param name="e"></param>
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            //Init();
+            if (!this.IsInDesignMode())
+            {
+                Init();
+            }
         }
         #endregion
 

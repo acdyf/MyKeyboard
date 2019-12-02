@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text.RegularExpressions;
+using System.Windows.Controls;
 
 namespace MyKeyboard.Methods
 {
@@ -10,26 +9,14 @@ namespace MyKeyboard.Methods
     internal static class Common
     {
         /// <summary>
-        /// 键盘信息字典
+        /// 索引转换字母
         /// </summary>
-        private static Dictionary<string, string> keyValuePairs;
-
-        /// <summary>
-        /// 获取键盘信息
-        /// </summary>
+        /// <param name="index">当前索引</param>
+        /// <param name="startIndex">起始索引 默认1</param>
         /// <returns></returns>
-        public static Dictionary<string, string> GetBoardInfo()
+        internal static char IndexToChar(this int index, int startIndex = 1)
         {
-            if (keyValuePairs == null || keyValuePairs.Count == 0)
-            {
-                keyValuePairs = new Dictionary<string, string>
-                {
-                    { "1", "ABC" },
-                    { "2", "123" },
-                    { "3", "#+=" }
-                };
-            }
-            return keyValuePairs;
+            return (char)('A' + index - startIndex);
         }
 
         /// <summary>
@@ -37,7 +24,7 @@ namespace MyKeyboard.Methods
         /// </summary>
         /// <param name="target"></param>
         /// <returns></returns>
-        public static string PowerToString(this object target)
+        internal static string PowerToString(this object target)
         {
             return target == null ? string.Empty : target.ToString();
         }
@@ -71,13 +58,13 @@ namespace MyKeyboard.Methods
         }
 
         /// <summary>
-        /// 判断是否为大写字母
+        /// 判断是否处于设计模式
         /// </summary>
-        /// <param name="s"></param>
+        /// <param name="control"></param>
         /// <returns></returns>
-        internal static bool IsUpperLetter(string s)
+        internal static bool IsInDesignMode(this Control control)
         {
-            return Regex.IsMatch(s, "^[A-Z]+$");
+            return System.ComponentModel.DesignerProperties.GetIsInDesignMode(control);
         }
     }
 }

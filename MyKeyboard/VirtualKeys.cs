@@ -2,13 +2,13 @@
 Copyright ©  2018  版权所有。   
 功能描述：虚拟按键枚举 
 创建时间：2018-05-30
-创建人员：dingyifang
+创建人员：dingyf
 --------------------------------------------------------------------------*/
 
 namespace MyKeyboard
 {
     /// <summary>
-    /// 键盘ascii码
+    /// 键盘码
     /// </summary>
     public enum VirtualKeys : byte
     {
