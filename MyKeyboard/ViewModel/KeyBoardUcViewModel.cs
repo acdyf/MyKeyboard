@@ -144,8 +144,8 @@ namespace MyKeyboard.ViewModel
             {
                 Characters.Add(Common.IndexToChar(i).ToString());
             }
-            CurrentPage = 1;
-            GoToPage = 2;
+            CurrentPage = (int)KeyBoardPageIndex.Character;
+            GoToPage = (int)KeyBoardPageIndex.Number;
             ChangeBoardPressExecuteCommand = new RelayCommand(ChangeBoardPress);
             CapsPressExecuteCommand = new RelayCommand(CapsLockPress);
             KeyPressExecuteCommand = new RelayCommand(KeyPress);

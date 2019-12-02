@@ -2,12 +2,12 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Color x:Key="DefaultBackgroundColor">#242424</Color>
     <Color x:Key="DefaultBorderColor">#F9F9F9</Color>
-    <Color x:Key="DefaultButtonExBackgroundColor">#333333</Color>
+    <Color x:Key="DefaultButtonExBackgroundColor">#242424</Color>
     <Color x:Key="DefaultButtonExForegroundColor">#F9F9F9</Color>
-    <Color x:Key="DefaultButtonExMouseOverBackgroundColor">#A5A5A5</Color>
+    <Color x:Key="DefaultButtonExMouseOverBackgroundColor">#DEDCE1</Color>
     <Color x:Key="DefaultButtonExMouseOverForegroundColor">#333333</Color>
-    <Color x:Key="DefaultButtonExPressedBackgroundColor">#FF9501</Color>
+    <Color x:Key="DefaultButtonExPressedBackgroundColor">#307EED</Color>
     <Color x:Key="DefaultButtonExPressedForegroundColor">#F9F9F9</Color>
-    <Color x:Key="DefaultButtonExLightBackgroundColor">#FF9501</Color>
+    <Color x:Key="DefaultButtonExLightBackgroundColor">#307EED</Color>
     <Color x:Key="DefaultButtonExLightForegroundColor">#F9F9F9</Color>
 </ResourceDictionary>
