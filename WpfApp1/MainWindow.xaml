@@ -5,6 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:kbu="clr-namespace:MyKeyboard;assembly=MyKeyboard"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="1037"  Background="#1A1A1A" Topmost="True">
-    <kbu:KeyBoardUc x:Name="KeyBoardUc" />
+        Title="MainWindow" Height="497.413" Width="1037"  Background="#1A1A1A" Topmost="True">
+    <StackPanel>
+        <Button Content="切换主题" Click="Button_Click" HorizontalAlignment="Right" Height="50"/>
+        <kbu:KeyBoardUc x:Name="KeyBoardUc" />
+    </StackPanel>
 </Window>

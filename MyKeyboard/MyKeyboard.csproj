@@ -56,20 +56,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enums\KeyBoardPageIndex.cs" />
+    <Compile Include="Enums\Themes.cs" />
     <Compile Include="KeyBoardUc.xaml.cs">
       <DependentUpon>KeyBoardUc.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Methods\ThemeSwitcher.cs" />
     <Compile Include="ViewModel\KeyBoardUcViewModel.cs" />
     <Compile Include="Resources\KeyButtonElement.cs" />
     <Compile Include="Methods\Common.cs" />
     <Compile Include="Methods\NativeMethods.cs" />
     <Compile Include="Methods\RelayCommand.cs" />
-    <Compile Include="Resources\CompareConverter.cs" />
+    <Compile Include="Resources\Converters\CompareConverter.cs" />
     <Compile Include="Enums\VirtualKeys.cs" />
-    <Page Include="Basic.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="KeyBoardUc.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -78,15 +76,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Resources\ButtonStyle.xaml">
+    <Page Include="Resources\Colors\ColorsLight.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Styles\ButtonStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Resources\Colors.xaml">
+    <Page Include="Resources\Colors\Colors.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Resources\Converters.xaml">
+    <Page Include="Resources\Converters\Converters.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

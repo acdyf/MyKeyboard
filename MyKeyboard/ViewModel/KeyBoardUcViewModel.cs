@@ -225,16 +225,16 @@ namespace MyKeyboard.ViewModel
                 if (temp.ToLower().StartsWith("shift_"))
                 {
                     bkey = Common.FindVirtualKey(temp.Substring(6));
-                    NativeMethods.Keybd_event((byte)VirtualKeys.Shift, 0x45, NativeMethods.KEYEVENTF_EXTENDEDKEY | 0, 0);
-                    NativeMethods.Keybd_event(bkey, 0x45, NativeMethods.KEYEVENTF_EXTENDEDKEY | 0, 0);
-                    NativeMethods.Keybd_event(bkey, 0x45, NativeMethods.KEYEVENTF_EXTENDEDKEY | NativeMethods.KEYEVENTF_KEYUP, 0);
-                    NativeMethods.Keybd_event((byte)VirtualKeys.Shift, 0x45, NativeMethods.KEYEVENTF_EXTENDEDKEY | NativeMethods.KEYEVENTF_KEYUP, 0);
+                    NativeMethods.Keybd_event((byte)VirtualKeys.Shift, 0, NativeMethods.KEYEVENTF_EXTENDEDKEY | 0, 0);
+                    NativeMethods.Keybd_event(bkey, 0, NativeMethods.KEYEVENTF_EXTENDEDKEY | 0, 0);
+                    NativeMethods.Keybd_event(bkey, 0, NativeMethods.KEYEVENTF_EXTENDEDKEY | NativeMethods.KEYEVENTF_KEYUP, 0);
+                    NativeMethods.Keybd_event((byte)VirtualKeys.Shift, 0, NativeMethods.KEYEVENTF_EXTENDEDKEY | NativeMethods.KEYEVENTF_KEYUP, 0);
                 }
                 else
                 {
                     bkey = Common.FindVirtualKey(temp);
-                    NativeMethods.Keybd_event(bkey, 0x45, NativeMethods.KEYEVENTF_EXTENDEDKEY | 0, 0);
-                    NativeMethods.Keybd_event(bkey, 0x45, NativeMethods.KEYEVENTF_EXTENDEDKEY | NativeMethods.KEYEVENTF_KEYUP, 0);
+                    NativeMethods.Keybd_event(bkey, 0, NativeMethods.KEYEVENTF_EXTENDEDKEY | 0, 0);
+                    NativeMethods.Keybd_event(bkey, 0, NativeMethods.KEYEVENTF_EXTENDEDKEY | NativeMethods.KEYEVENTF_KEYUP, 0);
                 }
             }
         }

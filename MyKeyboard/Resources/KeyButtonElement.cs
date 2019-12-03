@@ -4,7 +4,7 @@ using System.Windows.Media;
 namespace MyKeyboard.Resources
 {
     /// <summary>
-    /// 键盘按钮依赖元素
+    /// 键盘按钮附加元素
     /// </summary>
     public class KeyButtonElement
     {

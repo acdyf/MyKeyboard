@@ -7,12 +7,20 @@
              xmlns:vm="clr-namespace:MyKeyboard.ViewModel"
              mc:Ignorable="d" Loaded="UserControl_Loaded">
     <UserControl.Resources>
-        <ResourceDictionary Source="Basic.xaml"/>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/MyKeyboard;component/Resources/Geometries.xaml"/>
+                <ResourceDictionary Source="/MyKeyboard;component/Resources/Brushes.xaml"/>
+                <ResourceDictionary Source="/MyKeyboard;component/Resources/Styles/ButtonStyle.xaml"/>
+                <ResourceDictionary Source="/MyKeyboard;component/Resources/Converters/Converters.xaml"/>
+                <ResourceDictionary Source="/MyKeyboard;component/Resources/Colors/Colors.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </UserControl.Resources>
     <UserControl.DataContext>
         <vm:KeyBoardUcViewModel/>
     </UserControl.DataContext>
-    <Viewbox Stretch="Fill">
+    <Viewbox>
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="10"/>
@@ -31,7 +39,7 @@
                 <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding CurrentPage,Converter={StaticResource CompareToContentConverter},ConverterParameter=1}" HorizontalAlignment="Left" Width="200" Height="100"  Command="{Binding ChangeBoardPressExecuteCommand}" CommandParameter="{Binding GoToPage}" Margin="10,0,0,0"/>
                 <Button Style="{DynamicResource KeyButtonStyle}" Content="Enter" HorizontalAlignment="Right" Width="200" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="Return" Margin="0,0,10,0"/>
             </Grid>
-            <!--字母页 CurrentPage=1-->
+            <!--字母键盘 CurrentPage=1-->
             <StackPanel Grid.Row="1" Orientation="Horizontal" Visibility="{Binding CurrentPage,Converter={StaticResource CompareToVisibilityConverter},ConverterParameter=1}">
                 <Grid Width="10"/>
                 <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[16]}" Width="100" Height="100" Command="{Binding KeyPressExecuteCommand}" CommandParameter="Q"/>
@@ -97,7 +105,7 @@
                 <Button Style="{DynamicResource KeyButtonStyle}" res:KeyButtonElement.Geometry="{DynamicResource BackSpaceGeometry}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="Back"/>
                 <Grid Width="10"/>
             </StackPanel>
-            <!--数字与标点符号页 CurrentPage=2-->
+            <!--数字与标点符号键盘 CurrentPage=2-->
             <StackPanel Grid.Row="1" Orientation="Horizontal" Visibility="{Binding CurrentPage,Converter={StaticResource CompareToVisibilityConverter},ConverterParameter=2}" d:IsHidden="True">
                 <Grid Width="10"/>
                 <Button Style="{DynamicResource KeyButtonStyle}" Content="1" Width="100" Height="100" Command="{Binding KeyPressExecuteCommand}" CommandParameter="N1"/>
@@ -161,7 +169,7 @@
                 <Button Style="{DynamicResource KeyButtonStyle}" res:KeyButtonElement.Geometry="{DynamicResource BackSpaceGeometry}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="Back"/>
                 <Grid Width="10"/>
             </StackPanel>
-            <!--第三个键盘页 CurrentPage=3-->
+            <!--第三个键盘 CurrentPage=3-->
             <StackPanel Grid.Row="1" Orientation="Horizontal" Visibility="{Binding CurrentPage,Converter={StaticResource CompareToVisibilityConverter},ConverterParameter=3}" d:IsHidden="True">
                 <Grid Width="10"/>
                 <Button Style="{DynamicResource KeyButtonStyle}" Content="[" Width="100" Height="100" Command="{Binding KeyPressExecuteCommand}" CommandParameter="OEM4"/>
@@ -180,9 +188,9 @@
                 <Grid Width="10"/>
                 <Button Style="{DynamicResource KeyButtonStyle}" Content="*" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="Shift_N8"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="+" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="OEMPlus"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="+" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="Shift_OEMPlus"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="=" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="Shift_OEMPlus"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="=" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="OEMPlus"/>
                 <Grid Width="10"/>
             </StackPanel>
             <StackPanel Grid.Row="3" Orientation="Horizontal" Visibility="{Binding CurrentPage,Converter={StaticResource CompareToVisibilityConverter},ConverterParameter=3}" d:IsHidden="True">

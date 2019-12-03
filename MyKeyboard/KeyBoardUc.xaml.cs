@@ -47,6 +47,15 @@ namespace MyKeyboard
             int temp = NativeMethods.GetWindowLong(a, NativeMethods.GWL_EXSTYLE);
             NativeMethods.SetWindowLong(a, NativeMethods.GWL_EXSTYLE, temp | NativeMethods.WS_EX_NOACTIVATE);
         }
+
+        /// <summary>
+        /// 切换主题
+        /// </summary>
+        /// <param name="themes"></param>
+        public void SwitchTheme(Enums.Themes themes)
+        {
+            ThemeSwitcher.SwitchTheme(themes, this);
+        }
         #endregion
     }
 }

@@ -2,10 +2,10 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:MyKeyboard">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="Resources/Colors.xaml"/>
         <ResourceDictionary Source="Resources/Geometries.xaml"/>
         <ResourceDictionary Source="Resources/Brushes.xaml"/>
-        <ResourceDictionary Source="Resources/ButtonStyle.xaml"/>
-        <ResourceDictionary Source="Resources/Converters.xaml"/>
+        <ResourceDictionary Source="Resources/Styles/ButtonStyle.xaml"/>
+        <ResourceDictionary Source="Resources/Converters/Converters.xaml"/>
+        <ResourceDictionary Source="Resources/Colors/Colors.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

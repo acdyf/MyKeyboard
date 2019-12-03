@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:MyKeyboard.Resources">
-    <local:CompareConverter x:Key="CompareToVisibilityConverter" TrueValue="Visible" FalseValue="Collapsed"/>
+    <local:CompareConverter x:Key="CompareToVisibilityConverter" TrueValue="Visible" FalseValue="Hidden"/>
     <local:CompareConverter x:Key="CompareToContentConverter" TrueValue="123" FalseValue="ABC"/>
     <local:CompareConverter x:Key="CompareToSubContentConverter" TrueValue="#+=" FalseValue="123"/>
 </ResourceDictionary>
