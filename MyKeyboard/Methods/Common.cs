@@ -1,5 +1,6 @@
 ﻿using MyKeyboard.Enums;
 using System;
+using System.Text.RegularExpressions;
 using System.Windows.Controls;
 
 namespace MyKeyboard.Methods
@@ -66,6 +67,17 @@ namespace MyKeyboard.Methods
         internal static bool IsInDesignMode(this Control control)
         {
             return System.ComponentModel.DesignerProperties.GetIsInDesignMode(control);
+        }
+
+        /// <summary>
+        /// 是否是字母
+        /// </summary>
+        /// <param name="target"></param>
+        /// <returns></returns>
+        internal static bool IsCharacter(this string target)
+        {
+            Regex rg = new Regex("[a-zA-Z]");
+            return rg.IsMatch(target);
         }
     }
 }

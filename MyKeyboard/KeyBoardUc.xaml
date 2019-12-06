@@ -37,195 +37,195 @@
             <Grid Grid.Row="7">
                 <Button Style="{DynamicResource KeyButtonStyle}" Content="Space" HorizontalAlignment="Stretch" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="Space" Margin="220,0,220,0"/>
                 <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding CurrentPage,Converter={StaticResource CompareToContentConverter},ConverterParameter=1}" HorizontalAlignment="Left" Width="200" Height="100"  Command="{Binding ChangeBoardPressExecuteCommand}" CommandParameter="{Binding GoToPage}" Margin="10,0,0,0"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="Enter" HorizontalAlignment="Right" Width="200" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="Return" Margin="0,0,10,0"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="Enter" HorizontalAlignment="Right" Width="200" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}" Margin="0,0,10,0"/>
             </Grid>
             <!--字母键盘 CurrentPage=1-->
-            <StackPanel Grid.Row="1" Orientation="Horizontal" Visibility="{Binding CurrentPage,Converter={StaticResource CompareToVisibilityConverter},ConverterParameter=1}" d:IsHidden="True">
+            <StackPanel Grid.Row="1" Orientation="Horizontal" Visibility="{Binding CurrentPage,Converter={StaticResource CompareToVisibilityConverter},ConverterParameter=1}">
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[16]}" Width="100" Height="100" Command="{Binding KeyPressExecuteCommand}" CommandParameter="Q"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[16]}" Width="100" Height="100" Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[22]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="W"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[22]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[4]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="E"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[4]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[17]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="R"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[17]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[19]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="T"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[19]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[24]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="Y"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[24]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[20]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="U"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[20]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[8]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="I"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[8]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[14]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="O"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[14]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[15]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="P"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[15]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
             </StackPanel>
-            <StackPanel Grid.Row="3" Orientation="Horizontal" Visibility="{Binding CurrentPage,Converter={StaticResource CompareToVisibilityConverter},ConverterParameter=1}" d:IsHidden="True">
+            <StackPanel Grid.Row="3" Orientation="Horizontal" Visibility="{Binding CurrentPage,Converter={StaticResource CompareToVisibilityConverter},ConverterParameter=1}">
                 <Grid Width="60"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[0]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="A"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[0]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[18]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="S"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[18]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[3]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="D"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[3]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[5]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="F"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[5]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[6]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="G"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[6]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[7]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="H"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[7]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[9]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="J"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[9]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[10]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="K"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[10]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[11]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="L"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[11]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
             </StackPanel>
-            <StackPanel Grid.Row="5" Orientation="Horizontal" Visibility="{Binding CurrentPage,Converter={StaticResource CompareToVisibilityConverter},ConverterParameter=1}" d:IsHidden="True">
+            <StackPanel Grid.Row="5" Orientation="Horizontal" Visibility="{Binding CurrentPage,Converter={StaticResource CompareToVisibilityConverter},ConverterParameter=1}">
                 <Grid Width="10"/>
                 <Button Style="{DynamicResource KeyButtonStyle}" res:KeyButtonElement.Geometry="{DynamicResource UpArrowGeometry}" Width="100" Height="100" res:KeyButtonElement.IsAlwaysLight="{Binding AlwaysLight}" Command="{Binding CapsPressExecuteCommand}" CommandParameter="CapsLock"/>
                 <Grid Width="58"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[25]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="Z"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[25]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[23]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="X"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[23]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[2]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="C"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[2]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[21]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="V"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[21]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[1]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="B"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[1]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[13]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="N"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[13]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[12]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="M"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding Characters[12]}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="68"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" res:KeyButtonElement.Geometry="{DynamicResource BackSpaceGeometry}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="Back"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" res:KeyButtonElement.Geometry="{DynamicResource BackSpaceGeometry}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="BACKSPACE"/>
                 <Grid Width="10"/>
             </StackPanel>
             <!--数字与标点符号键盘 CurrentPage=2-->
             <StackPanel Grid.Row="1" Orientation="Horizontal" Visibility="{Binding CurrentPage,Converter={StaticResource CompareToVisibilityConverter},ConverterParameter=2}" d:IsHidden="True">
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="1" Width="100" Height="100" Command="{Binding KeyPressExecuteCommand}" CommandParameter="N1"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="1" Width="100" Height="100" Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="2" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="N2"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="2" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="3" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="N3"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="3" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="4" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="N4"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="4" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="5" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="N5"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="5" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="6" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="N6"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="6" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="7" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="N7"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="7" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="8" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="N8"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="8" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="9" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="N9"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="9" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="0" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="N0"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="0" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
             </StackPanel>
             <StackPanel Grid.Row="3" Orientation="Horizontal" Visibility="{Binding CurrentPage,Converter={StaticResource CompareToVisibilityConverter},ConverterParameter=2}" d:IsHidden="True">
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="-" Width="100" Height="100" Command="{Binding KeyPressExecuteCommand}" CommandParameter="OEMMinus"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="-" Width="100" Height="100" Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="/" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="OEM2"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="/" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content=":" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="Shift_OEM1"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content=":" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content=";" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="OEM1"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content=";" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="(" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="Shift_N9"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="(" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content=")" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="Shift_N0"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content=")" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="$" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="Shift_N4"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="$" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="&#38;" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="Shift_N7"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="&#38;" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="@" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="Shift_N2"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="@" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="&#34;" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="Shift_OEM7"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="&#34;" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
             </StackPanel>
             <StackPanel Grid.Row="5" Orientation="Horizontal" Visibility="{Binding CurrentPage,Converter={StaticResource CompareToVisibilityConverter},ConverterParameter=2}" d:IsHidden="True">
                 <Grid Width="10"/>
                 <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding CurrentPage,Converter={StaticResource CompareToSubContentConverter},ConverterParameter=2}" Width="100" Height="100" Command="{Binding ChangeBoardPressExecuteCommand}" CommandParameter="3"/>
                 <Grid Width="168"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="." Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="OEMPeriod"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="." Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="," Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="OEMComma"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="," Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="?" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="Shift_OEM2"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="?" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="!" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="Shift_N1"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="!" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="'" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="OEM7"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="'" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="178"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" res:KeyButtonElement.Geometry="{DynamicResource BackSpaceGeometry}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="Back"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" res:KeyButtonElement.Geometry="{DynamicResource BackSpaceGeometry}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="BACKSPACE"/>
                 <Grid Width="10"/>
             </StackPanel>
             <!--第三个键盘 CurrentPage=3-->
             <StackPanel Grid.Row="1" Orientation="Horizontal" Visibility="{Binding CurrentPage,Converter={StaticResource CompareToVisibilityConverter},ConverterParameter=3}">
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="[" Width="100" Height="100" Command="{Binding KeyPressExecuteCommand}" CommandParameter="OEM4"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="[" Width="100" Height="100" Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="]" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="OEM6"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="]" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
                 <!--特殊写法-->
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="{}{" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="Shift_OEM4"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="{}{" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="Shift_OEM6"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="#" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="Shift_N3"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="#" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="%" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="Shift_N5"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="%" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="^" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="Shift_N6"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="^" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="*" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="Shift_N8"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="*" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="+" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="Shift_OEMPlus"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="+" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="=" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="OEMPlus"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="=" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
             </StackPanel>
             <StackPanel Grid.Row="3" Orientation="Horizontal" Visibility="{Binding CurrentPage,Converter={StaticResource CompareToVisibilityConverter},ConverterParameter=3}" d:IsHidden="True">
                 <Grid Width="168"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="_" Width="100" Height="100" Command="{Binding KeyPressExecuteCommand}" CommandParameter="Shift_OEMMinus"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="_" Width="100" Height="100" Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="\" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="OEM5"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="\" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="|" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="Shift_OEM5"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="|" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="~" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="Shift_OEM3"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="~" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="&lt;" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="Shift_OEMComma"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="&lt;" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="&gt;" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="Shift_OEMPeriod"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="&gt;" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="`" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="OEM3"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="`" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
             </StackPanel>
             <StackPanel Grid.Row="5" Orientation="Horizontal" Visibility="{Binding CurrentPage,Converter={StaticResource CompareToVisibilityConverter},ConverterParameter=3}" d:IsHidden="True">
                 <Grid Width="10"/>
                 <Button Style="{DynamicResource KeyButtonStyle}" Content="{Binding CurrentPage,Converter={StaticResource CompareToSubContentConverter},ConverterParameter=2}" Width="100" Height="100" Command="{Binding ChangeBoardPressExecuteCommand}" CommandParameter="2"/>
                 <Grid Width="168"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="." Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="OEMPeriod"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="." Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="," Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="OEMComma"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="," Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="?" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="Shift_OEM2"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="?" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="!" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="Shift_N1"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="!" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="10"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" Content="'" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="OEM7"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" Content="'" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
                 <Grid Width="178"/>
-                <Button Style="{DynamicResource KeyButtonStyle}" res:KeyButtonElement.Geometry="{DynamicResource BackSpaceGeometry}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="Back"/>
+                <Button Style="{DynamicResource KeyButtonStyle}" res:KeyButtonElement.Geometry="{DynamicResource BackSpaceGeometry}" Width="100" Height="100"  Command="{Binding KeyPressExecuteCommand}" CommandParameter="BACKSPACE"/>
                 <Grid Width="10"/>
             </StackPanel>
         </Grid>

@@ -3,6 +3,7 @@ using MyKeyboard.Methods;
 using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Windows.Forms;
 using System.Windows.Input;
 
 namespace MyKeyboard.ViewModel
@@ -222,19 +223,20 @@ namespace MyKeyboard.ViewModel
             {
                 byte bkey;
                 string temp = obj.PowerToString();
-                if (temp.ToLower().StartsWith("shift_"))
+                if (temp.Length == 1 && temp.IsCharacter())
                 {
-                    bkey = Common.FindVirtualKey(temp.Substring(6));
-                    NativeMethods.Keybd_event((byte)VirtualKeys.Shift, 0, NativeMethods.KEYEVENTF_EXTENDEDKEY | 0, 0);
-                    NativeMethods.Keybd_event(bkey, 0, NativeMethods.KEYEVENTF_EXTENDEDKEY | 0, 0);
-                    NativeMethods.Keybd_event(bkey, 0, NativeMethods.KEYEVENTF_EXTENDEDKEY | NativeMethods.KEYEVENTF_KEYUP, 0);
-                    NativeMethods.Keybd_event((byte)VirtualKeys.Shift, 0, NativeMethods.KEYEVENTF_EXTENDEDKEY | NativeMethods.KEYEVENTF_KEYUP, 0);
+                    SendKeys.SendWait(temp.ToLower());
                 }
                 else
                 {
-                    bkey = Common.FindVirtualKey(temp);
-                    NativeMethods.Keybd_event(bkey, 0, NativeMethods.KEYEVENTF_EXTENDEDKEY | 0, 0);
-                    NativeMethods.Keybd_event(bkey, 0, NativeMethods.KEYEVENTF_EXTENDEDKEY | NativeMethods.KEYEVENTF_KEYUP, 0);
+                    if (temp == "Space")
+                    {
+                        SendKeys.SendWait(" ");
+                    }
+                    else
+                    {
+                        SendKeys.SendWait("{" + temp + "}");
+                    }
                 }
             }
         }
